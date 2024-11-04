@@ -1,0 +1,16 @@
+<header>
+    <div class="header-content">
+      <h1>{{ userName }}</h1>
+      <input type="text" placeholder="Ara..." />
+    </div>
+    <nav>
+      <ul>
+        <li><a routerLink="/">Ana Sayfa</a></li>
+        <li><a routerLink="/about">Hakkımda</a></li>
+        <li *ngFor="let category of categories">
+          <a [routerLink]="['/category', category]">{{ category | titlecase }}</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  

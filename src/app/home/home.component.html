@@ -1,0 +1,28 @@
+<h1>Haberler</h1>
+
+<!-- Kategoriler -->
+<div class="categories">
+  <h2>Kategoriler</h2>
+  <ul>
+    <li *ngFor="let category of categories">
+      <a [routerLink]="['/category', category]">{{ category | titlecase }}</a>
+    </li>
+  </ul>
+</div>
+
+<!-- Slider -->
+<div class="slider">
+  <div *ngFor="let headline of topHeadlines.slice(0, 3)">
+    <h3>{{ headline.title }}</h3>
+    <img [src]="headline.urlToImage" alt="{{ headline.title }}" />
+  </div>
+</div>
+
+<!-- Haberler -->
+<div class="news">
+  <h2>Tüm Haberler</h2>
+  <div *ngFor="let headline of topHeadlines.slice(3)">
+    <h3>{{ headline.title }}</h3>
+    <img [src]="headline.urlToImage" alt="{{ headline.title }}" />
+  </div>
+</div>
